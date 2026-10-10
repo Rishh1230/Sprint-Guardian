@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.join(ROOT_DIR, "scripts"))
 
 def main() -> None:
     print("==================================================")
-    print("  🧪 Sprint Guardian — Test Suite")
+    print("  Sprint Guardian — Test Suite")
     print("==================================================")
     print()
 
@@ -27,10 +27,10 @@ def main() -> None:
 
     print()
     if result.wasSuccessful():
-        print("✅ All tests passed successfully!")
+        print("[PASS] All tests passed successfully.")
         sys.exit(0)
     else:
-        print(f"❌ Test run failed: {len(result.failures)} failures, {len(result.errors)} errors.")
+        print(f"[FAIL] Test run failed: {len(result.failures)} failures, {len(result.errors)} errors.")
         sys.exit(1)
 
 

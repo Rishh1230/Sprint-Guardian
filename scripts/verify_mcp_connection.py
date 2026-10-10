@@ -22,25 +22,25 @@ import urllib.request
 
 
 def check(label: str, ok: bool, detail: str = "") -> bool:
-    status = "✅" if ok else "❌"
-    msg = f"  {status}  {label}"
+    status = "[OK]  " if ok else "[FAIL]"
+    msg = f"  {status} {label}"
     if detail:
-        msg += f" — {detail}"
+        msg += f" - {detail}"
     print(msg)
     return ok
 
 
 def warn(label: str, detail: str = "") -> None:
-    msg = f"  ⚠️   {label}"
+    msg = f"  [WARN] {label}"
     if detail:
-        msg += f" — {detail}"
+        msg += f" - {detail}"
     print(msg)
 
 
 def main() -> None:
     print()
     print("==================================================")
-    print("  🔗 Jira & MCP Connection Readiness Check")
+    print("  Jira & MCP Connection Readiness Check")
     print("==================================================")
     print()
 
@@ -112,7 +112,7 @@ def main() -> None:
 
     print()
     if all_ok:
-        print("Jira & MCP connectivity verified successfully! 🚀")
+        print("Jira and MCP connectivity verified successfully.")
         sys.exit(0)
     else:
         print("Connectivity check failed. Please review credentials and network access.")

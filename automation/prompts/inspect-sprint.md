@@ -21,7 +21,7 @@ Goal: produce a comprehensive sprint health report. This mode is read-only — n
 
 ## Output Requirements
 
-1. **Sprint Health Summary** — overall status: 🟢 On Track / 🟡 At Risk / 🔴 In Trouble, with a one-paragraph rationale.
+1. **Sprint Health Summary** — overall status: On Track / At Risk / Needs Attention, with a one-paragraph rationale.
 2. **Blocked Issues** — table with issue key, summary, status, assigned to, days blocked.
 3. **Stale Issues** — table with issue key, summary, last updated, assigned to.
 4. **Unassigned In-Progress** — table with issue key, summary, status, priority.

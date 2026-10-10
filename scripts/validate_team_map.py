@@ -163,7 +163,7 @@ def main() -> None:
         authorities = (data.get("approval") or {}).get("assigning_authorities", [])
         info(f"Assigning authorities: {len(authorities)}")
         print()
-        print("Validation PASSED ✅")
+        print("Validation PASSED [OK]")
 
 
 if __name__ == "__main__":

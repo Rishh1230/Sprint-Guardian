@@ -22,7 +22,7 @@ link_skill() {
   fi
 
   ln -s "$ROOT_DIR" "$target_link"
-  printf '✅ Linked for %s: %s -> %s\n' "$agent_name" "$target_link" "$ROOT_DIR"
+  printf '[OK] Linked for %s: %s -> %s\n' "$agent_name" "$target_link" "$ROOT_DIR"
 }
 
 echo "Installing Sprint Guardian skill..."

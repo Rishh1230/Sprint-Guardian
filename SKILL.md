@@ -7,9 +7,9 @@ metadata:
   version: "1.2.0"
 ---
 
-# 🛡️ Sprint Guardian
+# Sprint Guardian
 
-> **An AI-powered Agile Sprint Orchestrator that automates Jira task triage, load balancing, and team standups with secure, human-in-the-loop guardrails.**
+> Agile sprint coordination system that automates Jira task triage, load balancing, sprint inspections, and team standups with human-in-the-loop approval guardrails.
 
 > [!NOTE]
 > **Sprint Guardian Customization**: 

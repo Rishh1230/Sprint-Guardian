@@ -6,17 +6,17 @@ Detailed documentation for all 9 operational modes of Sprint Guardian.
 
 ## Mode Overview
 
-| Mode | Mutation? | Approval Required? | Jira Writes |
+| Mode | Mutation Support | Approval Required? | Jira Writes |
 |---|---|---|---|
-| `shape-sprint` | ✅ Optional | ✅ For assignee changes | Sprint scope, issue moves |
-| `triage-queue` | ✅ Optional | ✅ For assignee changes | Labels, comments, watchers |
-| `suggest-owner` | ✅ Optional | ✅ Always | Assignee field |
-| `balance-load` | ✅ Optional | ✅ Always | Assignee field |
-| `inspect-sprint` | ❌ Read-only | N/A | None |
-| `surface-risk` | ❌ Read-only | N/A | None |
-| `progress-pulse` | ❌ Read-only | N/A | None |
-| `standup-brief` | ❌ Read-only | N/A | None |
-| `retro-notes` | ❌ Read-only | N/A | None |
+| `shape-sprint` | Supported | Yes (for assignee changes) | Sprint scope, issue moves |
+| `triage-queue` | Supported | Yes (for assignee changes) | Labels, comments, watchers |
+| `suggest-owner` | Supported | Yes (always) | Assignee field |
+| `balance-load` | Supported | Yes (always) | Assignee field |
+| `inspect-sprint` | None (Read-only) | N/A | None |
+| `surface-risk` | None (Read-only) | N/A | None |
+| `progress-pulse` | None (Read-only) | N/A | None |
+| `standup-brief` | None (Read-only) | N/A | None |
+| `retro-notes` | None (Read-only) | N/A | None |
 
 ---
 
@@ -176,11 +176,11 @@ Detailed documentation for all 9 operational modes of Sprint Guardian.
 **Purpose:** Compile a daily team standup summary. Read-only.
 
 **Sections:**
-- 🟢 Done (last 24h)
-- 🔵 In Progress (active work)
-- 🔴 Blocked / Needs Decision
-- ⚠️ Stale tickets
-- 📋 Pending approvals
+- Done (last 24 hours)
+- In Progress (active work)
+- Blocked / Decisions Needed
+- Stale Tickets
+- Pending Approvals
 
 ```bash
 ./automation/standup-brief.sh --board-id 1234

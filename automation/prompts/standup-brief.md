@@ -17,9 +17,9 @@ Goal: compile a concise, human-readable daily standup brief for the whole team. 
 ## Output Requirements
 
 1. **Team Summary** — 2–3 sentence overview of where the sprint stands today.
-2. **🟢 Done (last 24h)** — issues completed since yesterday.
-3. **🔵 In Progress** — active issues with owner names.
-4. **🔴 Blockers & Stuck** — anything blocked, stale, or needing a decision right now.
-5. **⚠️ Stale Tickets** — tickets with no update in more than `stale_after_days`.
-6. **📋 Pending Approvals** — outstanding approval items from previous runs.
+2. **Done (last 24 hours)** — issues completed since yesterday.
+3. **In Progress** — active issues with owner names.
+4. **Blockers & Stuck Items** — anything blocked, stale, or needing a decision right now.
+5. **Stale Tickets** — tickets with no update in more than `stale_after_days`.
+6. **Pending Approvals** — outstanding approval items from previous runs.
 7. **Today's Focus** — one-line suggestion for what the team should prioritize today.

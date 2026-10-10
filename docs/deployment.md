@@ -1,10 +1,10 @@
-# 🚢 Sprint Guardian — Deployment Guide
+# Sprint Guardian — Deployment Guide
 
-This guide covers production deployment options for **Sprint Guardian**.
+This guide covers production deployment options for Sprint Guardian.
 
 ---
 
-## 📋 Deployment Options at a Glance
+## Deployment Options at a Glance
 
 | Deployment Target | Best For | Prerequisites |
 |---|---|---|
@@ -134,7 +134,7 @@ This symlinks the skill folder into `~/.codex/skills/` and `~/.claude/skills/`.
 
 ---
 
-## 🔒 Production Security Checklist
+## Production Security Checklist
 
 Before deploying in a production environment:
 

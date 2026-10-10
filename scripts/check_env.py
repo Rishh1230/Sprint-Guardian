@@ -19,18 +19,18 @@ import sys
 
 
 def check(label: str, ok: bool, detail: str = "") -> bool:
-    status = "✅" if ok else "❌"
-    msg = f"  {status}  {label}"
+    status = "[OK]  " if ok else "[FAIL]"
+    msg = f"  {status} {label}"
     if detail:
-        msg += f" — {detail}"
+        msg += f" - {detail}"
     print(msg)
     return ok
 
 
 def warn(label: str, detail: str = "") -> None:
-    msg = f"  ⚠️   {label}"
+    msg = f"  [WARN] {label}"
     if detail:
-        msg += f" — {detail}"
+        msg += f" - {detail}"
     print(msg)
 
 
@@ -99,7 +99,7 @@ def main() -> None:
 
     print()
     if all_ok:
-        print("All required checks passed. Sprint Guardian is ready to run. 🚀")
+        print("All required checks passed. Environment is ready.")
     else:
         print("One or more required checks failed. Fix the issues above and re-run.")
         sys.exit(1)

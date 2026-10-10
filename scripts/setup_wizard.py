@@ -55,7 +55,7 @@ def prompt_csv(label: str, default: list[str]) -> list[str]:
 def run_wizard() -> None:
     print()
     print("======================================================")
-    print("   🛡️  Sprint Guardian — Setup Wizard")
+    print("   Sprint Guardian — Setup Wizard")
     print("======================================================")
     print("This wizard helps you configure your Jira board, team,")
     print("and approval authorities in under 2 minutes.")
@@ -164,7 +164,7 @@ def run_wizard() -> None:
     print(f"\nWriting {LOCAL_TEAM_MAP}...")
     with open(LOCAL_TEAM_MAP, "w", encoding="utf-8") as fh:
         yaml.dump(team_map_data, fh, sort_keys=False, default_flow_style=False)
-    print("  ✅ Created references/team-map.local.yaml")
+    print("  [OK] Created references/team-map.local.yaml")
 
     # Step 5: Write .env
     print(f"Writing {LOCAL_ENV}...")
@@ -176,10 +176,10 @@ SPRINT_ASSIGNER_APPROVED_BY={lead_name}
 """
     with open(LOCAL_ENV, "w", encoding="utf-8") as fh:
         fh.write(env_content)
-    print("  ✅ Created .env")
+    print("  [OK] Created .env")
 
     print("\n======================================================")
-    print("   🎉 Configuration Complete!")
+    print("   Configuration Complete")
     print("======================================================")
     print("Next steps:")
     print("  1. Validate setup:    ./automation/validate-skill.sh")

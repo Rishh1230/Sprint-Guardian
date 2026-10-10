@@ -12,7 +12,7 @@ BOARD_ID="${SPRINT_ASSIGNER_BOARD_ID:-1234}"
 PROJECT_KEY="${SPRINT_ASSIGNER_PROJECT_KEYS:-PROJ}"
 
 echo "=================================================="
-echo "  📅 Installing Sprint Guardian Cron Jobs"
+echo "  Installing Sprint Guardian Cron Jobs"
 echo "=================================================="
 echo "Workspace:   $ROOT_DIR"
 echo "Log dir:     $LOG_DIR"
@@ -55,7 +55,7 @@ TMP_CRON="$(mktemp)"
 crontab "$TMP_CRON"
 rm -f "$TMP_CRON"
 
-echo "✅ Cron jobs installed successfully!"
+echo "Cron jobs installed successfully."
 echo
 echo "Installed schedules:"
 crontab -l | grep -A 8 "$CRON_TAG - BEGIN"
