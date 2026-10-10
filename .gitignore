@@ -1,0 +1,23 @@
+# ── Output & Logs ─────────────────────────────────────────────────────────────
+automation/output/*.md
+automation/output/*.log
+
+# ── Local Config (contains team emails, board IDs) ────────────────────────────
+references/team-map.local.yaml
+.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv*
+venv/
+*.egg-info/
+
+# ── OS & Editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

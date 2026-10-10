@@ -1,0 +1,98 @@
+{
+  "active_sprint": {
+    "sprint_id": "4567",
+    "sprint_name": "Sprint 42",
+    "board_id": "1234",
+    "issues": [
+      {
+        "key": "PROJ-101",
+        "fields": {
+          "summary": "Implement JWT refresh token mechanism",
+          "status": { "name": "In Progress" },
+          "assignee": { "displayName": "Team Lead", "emailAddress": "lead@example.com" },
+          "priority": { "name": "High" },
+          "components": [{ "name": "PROJ" }],
+          "labels": ["backend", "security"],
+          "updated": "2026-10-10T12:00:00.000+0000",
+          "created": "2026-10-01T08:00:00.000+0000",
+          "duedate": "2026-10-15"
+        }
+      },
+      {
+        "key": "PROJ-102",
+        "fields": {
+          "summary": "Fix Redis connection pool starvation under load",
+          "status": { "name": "Blocked" },
+          "assignee": { "displayName": "Engineer One", "emailAddress": "engineer.one@example.com" },
+          "priority": { "name": "Highest" },
+          "components": [{ "name": "PROJ" }],
+          "labels": ["backend", "automation"],
+          "updated": "2026-10-06T10:00:00.000+0000",
+          "created": "2026-10-02T09:00:00.000+0000",
+          "duedate": "2026-10-12"
+        }
+      },
+      {
+        "key": "PROJ-103",
+        "fields": {
+          "summary": "Add unit tests for slice-selection router",
+          "status": { "name": "In Review" },
+          "assignee": { "displayName": "Engineer Two", "emailAddress": "engineer.two@example.com" },
+          "priority": { "name": "Medium" },
+          "components": [{ "name": "PROJ-Test" }],
+          "labels": ["frontend", "testing"],
+          "updated": "2026-10-10T14:30:00.000+0000",
+          "created": "2026-10-04T11:00:00.000+0000",
+          "duedate": "2026-10-18"
+        }
+      },
+      {
+        "key": "PROJ-104",
+        "fields": {
+          "summary": "Database migration script for organization tenants",
+          "status": { "name": "In Progress" },
+          "assignee": null,
+          "priority": { "name": "High" },
+          "components": [{ "name": "PROJ" }],
+          "labels": ["database"],
+          "updated": "2026-10-05T08:00:00.000+0000",
+          "created": "2026-10-03T10:00:00.000+0000",
+          "duedate": "2026-10-14"
+        }
+      }
+    ]
+  },
+  "backlog": {
+    "total": 5,
+    "issues": [
+      {
+        "key": "PROJ-105",
+        "fields": {
+          "summary": "Optimize GraphQL resolver batch queries",
+          "status": { "name": "To Do" },
+          "assignee": null,
+          "priority": { "name": "High" },
+          "components": [{ "name": "PROJ" }],
+          "labels": ["backend", "performance"],
+          "updated": "2026-10-08T15:00:00.000+0000",
+          "created": "2026-10-07T12:00:00.000+0000",
+          "duedate": null
+        }
+      },
+      {
+        "key": "PROJ-106",
+        "fields": {
+          "summary": "Update onboarding documentation and architecture diagram",
+          "status": { "name": "Backlog" },
+          "assignee": null,
+          "priority": { "name": "Low" },
+          "components": [{ "name": "PROJ" }],
+          "labels": ["docs"],
+          "updated": "2026-09-20T10:00:00.000+0000",
+          "created": "2026-09-15T09:00:00.000+0000",
+          "duedate": null
+        }
+      }
+    ]
+  }
+}

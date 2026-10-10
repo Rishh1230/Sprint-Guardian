@@ -1,0 +1,5 @@
+# Sprint Guardian — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# Required: YAML parsing for team map validation and approval authority checks
+pyyaml>=6.0

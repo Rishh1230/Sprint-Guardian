@@ -1,0 +1,32 @@
+services:
+  sprint-guardian:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sprint-guardian
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - SPRINT_ASSIGNER_TEAM_MAP=/app/references/team-map.local.yaml
+      - SKIP_ENV_CHECK=false
+    volumes:
+      # Mount your configured team map into the container
+      - ./references/team-map.local.yaml:/app/references/team-map.local.yaml:ro
+      # Mount output directory to retain reports and approval logs on host
+      - ./automation/output:/app/automation/output
+    # Default: Run cron-daemon for scheduled automated ceremonies
+    command: ["cron-daemon"]
+
+  # One-off task runner service
+  sprint-guardian-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    profiles: ["cli"]
+    env_file:
+      - .env
+    volumes:
+      - ./references/team-map.local.yaml:/app/references/team-map.local.yaml:ro
+      - ./automation/output:/app/automation/output
+    entrypoint: ["/app/scripts/docker-entrypoint.sh"]

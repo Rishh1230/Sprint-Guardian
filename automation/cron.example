@@ -1,0 +1,13 @@
+# Sprint Guardian cron schedule examples. Adjust board IDs, sprint IDs, and JQL before use.
+# Commands default to dry-run. Add --apply only after reviewing output.
+#
+# Replace /YOUR/WORKSPACE/PATH with the actual path to your workspace directory.
+
+# Monday morning: shape next sprint scope.
+0 9 * * 1 cd /YOUR/WORKSPACE/PATH && ./automation/shape-sprint.sh --board-id 1234 --project-key PROJ >> /tmp/sprint-guardian-shape.log 2>&1
+
+# Weekday standup: create a short progress pulse.
+0 10 * * 1-5 cd /YOUR/WORKSPACE/PATH && ./automation/progress-pulse.sh --board-id 1234 --sprint-id 4567 >> /tmp/sprint-guardian-pulse.log 2>&1
+
+# Twice weekly: surface sprint delivery risk.
+0 16 * * 2,4 cd /YOUR/WORKSPACE/PATH && ./automation/surface-risk.sh --board-id 1234 --sprint-id 4567 >> /tmp/sprint-guardian-risk.log 2>&1

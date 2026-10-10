@@ -1,0 +1,68 @@
+name: Scheduled Sprint Guardian Automation
+
+on:
+  schedule:
+    # Monday 9:00 AM UTC — Sprint scope shaping
+    - cron: '0 9 * * 1'
+    # Weekdays 9:30 AM UTC — Daily Standup Brief
+    - cron: '30 9 * * 1-5'
+    # Tuesday & Thursday 4:00 PM UTC — Surface risks
+    - cron: '0 16 * * 2,4'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Sprint Guardian Mode to run'
+        required: true
+        default: 'standup-brief'
+        type: choice
+        options:
+          - standup-brief
+          - inspect-sprint
+          - surface-risk
+          - progress-pulse
+          - shape-sprint
+          - triage-queue
+
+jobs:
+  run-sprint-guardian:
+    name: Run Sprint Guardian
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Sprint Guardian
+        env:
+          SPRINT_ASSIGNER_BOARD_ID: ${{ secrets.JIRA_BOARD_ID || '1234' }}
+          SPRINT_ASSIGNER_PROJECT_KEYS: ${{ secrets.JIRA_PROJECT_KEY || 'PROJ' }}
+          JIRA_INSTANCE_URL: ${{ secrets.JIRA_INSTANCE_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'standup-brief' }}"
+          echo "Executing Sprint Guardian Mode: $MODE"
+          if [[ -f "references/team-map.local.yaml" ]]; then
+            ./automation/${MODE}.sh || echo "Completed with warnings"
+          else
+            echo "Using team-map.example.yaml as template"
+            cp references/team-map.example.yaml references/team-map.local.yaml
+            ./automation/${MODE}.sh || echo "Completed with warnings"
+          fi
+
+      - name: Archive output artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sprint-guardian-reports
+          path: automation/output/
+          retention-days: 14

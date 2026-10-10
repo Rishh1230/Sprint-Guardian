@@ -1,0 +1,7 @@
+# Enforce Unix line endings for shell scripts and text files
+*.sh    text eol=lf
+*.md    text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.py    text eol=lf
+*.log   text eol=lf
